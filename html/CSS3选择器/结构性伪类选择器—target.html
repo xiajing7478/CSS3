@@ -4,10 +4,73 @@
     <meta charset="UTF-8">
     <title>结构性伪类选择器—target</title>
     <style type="text/css">
+        /*.menuSection{*/
+            /*display: none;*/
+        /*}*/
+        /*.menuSection:target{*/
+            /*/!*这里的:target就是指id="brand"的div对象*!/*/
+            /*display:block;*/
+        /*}*/
+
+
+        .menuSection{
+            display: none;
+        }
+
+        .menuSection>img{
+            width: 600px;
+            height: 300px;
+            margin: 5px auto;
+        }
+
+        #brand:target {
+            display: block;
+            position: absolute;
+            top: 20%;
+        }
+        #jake:target {
+            display: block;
+            position: absolute;
+            top: 20%;
+        }
+        #aron:target {
+            display: block;
+            position: absolute;
+            top: 20%;
+        }
+        #aron1:target{
+            display: block;
+            position: absolute;
+            top: 20%;
+        }
+
+        body>h2{
+            float: left;
+            z-index: 1000;
+        }
+
+        body>h2 img{
+            width: 40px;
+            padding-left: 20px;
+            z-index: 100;
+        }
+
 
     </style>
 </head>
 <body>
+
+    <h2><a href="#brand"><img src="../../imgs/pic1.JPG"></a></h2>
+    <div class="menuSection" id="brand"><img src="../../imgs/pic1.JPG"></div>
+
+    <h2><a href="#jake"><img src="../../imgs/pic2.jpg"></a></a></h2>
+    <div class="menuSection" id="jake"><img src="../../imgs/pic2.jpg"></div>
+
+    <h2><a href="#aron"><img src="../../imgs/pic3.jpg"></a></h2>
+    <div class="menuSection" id="aron"><img src="../../imgs/pic3.jpg"></div>
+
+    <h2><a href="#aron1"><img src="../../imgs/pic4.jpg"></a></h2>
+    <div class="menuSection" id="aron1"><img src="../../imgs/pic4.jpg"></div>
 
 </body>
 </html>
