@@ -11,11 +11,61 @@
             text-align: center;
             color: #000;
             font-size: 22px;
+            background-image: linear-gradient(to top left, yellow,green);
+        }
 
+        table{
+            border: 1px solid red;
+        }
+        td{
+            border-bottom: 1px solid black;
+            border-right: 1px solid black;
         }
     </style>
 </head>
 <body>
+    <div>CSS3 Gradient 分为线性渐变(linear)和径向渐变(radial)。</div>
+    <div>
+        语法:background-image: linear-gradient(to bottom, yellow,green)
+        第一个参数省略时，默认为“180deg”，等同于“to bottom”。   </div>
+        <table>
+            <tr>
+                <td>角度</td>
+                <td>用英文表示</td>
+                <td>作用</td>
+            </tr>
+            <tr>
+                <td>0deg</td>
+                <td>to top</td>
+                <td>从下向上</td>
+            </tr>
+            <tr>
+                <td>90deg</td>
+                <td>to right</td>
+                <td>从左到右</td>
+            </tr>
+            <tr>
+                <td>180deg</td>
+                <td>to bottom</td>
+                <td>从上到下</td>
+            </tr>
+            <tr>
+                <td>270deg</td>
+                <td>to left</td>
+                <td>从右到左</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>to top left</td>
+                <td>右下角到左上角</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>to top right</td>
+                <td>左下角到右上角</td>
+            </tr>
+        </table>
+
     <p>右下角向左上角的线性渐变背景</p>
 </body>
 </html>
