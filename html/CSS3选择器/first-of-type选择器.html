@@ -3,9 +3,65 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>first-of-type选择器</title>
-    <style type="text/css"></style>
+    <style type="text/css">
+        .wrapper{
+            width: 500px;
+            margin: 20px auto;
+            padding: 10px;
+            border: 1px solid #ccc;
+            /*color: #fff;*/
+        }
+        .wrapper > div {
+            background: green;
+        }
+
+        .wrapper>p{
+            background: blue;
+        }
+
+        .wrapper>p:first-of-type{
+            background: orange;
+        }
+
+
+        .wrapper1 {
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 500px;
+            margin: 20px auto;
+        }
+
+        .wrapper1 > p,
+        .wrapper1 > div {
+            margin: 10px 0;
+            background: green;
+            color: #fff;
+            padding: 5px;
+        }
+
+        .wrapper1 >div:first-of-type  {
+            background: orange;
+        }
+
+    </style>
 </head>
 <body>
+    <!--<div class="wrapper">-->
+        <!--<div>我是一个块元素，我是.wrapper的第一个子元素</div>-->
+        <!--<p>我是一个段落元素，我是不是.wrapper的第一个子元素，但是他的第一个段落元素</p>-->
+        <!--<p>我是一个段落元素</p>-->
+        <!--<div>我是一个块元素</div>-->
+    <!--</div>-->
 
+    <div class="wrapper1">
+        <p>我是第一个段落</p>
+        <p>我是第二个段落</p>
+        <div>我是第一个Div元素</div>
+        <div>我是第二个Div元素</div>
+        <p>我是第三个段落</p>
+        <p>我是第四个段落</p>
+        <div>我是第三个Div元素</div>
+        <div>我是第四个Div元素</div>
+    </div>
 </body>
 </html>
