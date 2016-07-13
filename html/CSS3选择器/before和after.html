@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>before和after</title>
+    <style type="text/css">
+        .box h3{
+            text-align:center;
+            position:relative;
+            top:80px;
+        }
+        .box {
+            width:70%;
+            height:200px;
+            background:#FFF;
+            margin:40px auto;
+        }
+        .effect{
+            position: relative;
+            -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+        }
+        .effect:before{
+            content:"";
+            position:absolute;
+            z-index:-1;
+            -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+            -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+            box-shadow:0 0 20px rgba(0,0,0,0.8);
+            top:50%;
+            bottom:0;
+            left:10px;
+            right:10px;
+            -moz-border-radius:100px / 10px;
+            border-radius:100px / 10px;
+        }
+
+    </style>
+</head>
+<body>
+<p>::before和::after这两个主要用来给元素的前面或后面插入内容，这两个常和"content"配合使用，使用的场景最多的就是清除浮动。</p>
+<p style="background-color: #47fd21;color: #fff;">.clearfix::before,
+    .clearfix::after {
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    }
+    .clearfix:after {clear: both;}
+    .clearfix {zoom: 1;}
+</p>
+
+<div class="box effect">
+    <h3>Shadow Effect </h3>
+</div>
+</body>
+</html>
