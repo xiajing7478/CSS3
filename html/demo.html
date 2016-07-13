@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>制作导航菜单综合练习题</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .nav{
+            list-style: none;
+            overflow: hidden;
+            background-color: #f65f57;;
+            margin: 20px auto;
+            width: 560px;
+            height: 30px;
+            line-height:30px;
+            box-shadow: 1px 3px 1px #ccc;
+            border-radius: 5px;
+            font-family:'Arial';
+        }
+        .nav>li{
+            float: left;
+            padding-left: 33px;
+        }
+
+        .nav>li a{
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+            display: inline-block;
+
+            -webkit-transition: all 0.5s ease-in;
+            -moz-transition: all 0.5s ease-in;
+            -ms-transition: all 0.5s ease-in;
+            -o-transition: all 0.5s ease-in;
+            transition: all 0.5s ease-in;
+
+        }
+
+        .nav a:hover{
+            -webkit-transform: rotate(10deg);
+            -moz-transform: rotate(10deg);
+            -ms-transform: rotate(10deg);
+            -o-transform: rotate(10deg);
+            transform: rotate(10deg);
+
+            text-shadow: 1px 1px 0 black;
+
+        }
+
+        .nav>li+li:before{
+            content: "|";
+            padding-right: 20px;
+            color: #ccc;
+        }
+
+    </style>
+</head>
+<body>
+
+<ul class="nav">
+    <li><a href="javascript:void(0);">Home</a></li>
+    <li><a href="javascript:void(0);">About Me</a></li>
+    <li><a href="javascript:void(0);">Portfolio</a></li>
+    <li><a href="javascript:void(0);">Blog</a></li>
+    <li><a href="javascript:void(0);">Resources</a></li>
+    <li><a href="javascript:void(0);">Contact Me</a></li>
+</ul>
+
+</body>
+</html>
