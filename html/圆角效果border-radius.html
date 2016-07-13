@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>圆角效果 border-radius</title>
+    <style type="text/css">
+        div+div{
+            margin-top: 20px;
+        }
+
+        div.circle{
+            height: 100px;
+            width: 100px;
+            background:#9da;
+            -webkit-border-radius: 50px;
+            -moz-border-radius: 50px;
+            border-radius: 50px;
+
+        }
+        .topHalfCircle{
+            width: 100px;
+            height: 50px;
+            border-radius: 50px 50px 0 0;
+            background-color: red;
+        }
+
+        .bottomHalfCircle{
+            height: 50px;
+            width: 100px;
+            background:#9da;
+            -webkit-border-radius: 0 0 50px 50px;
+            -moz-border-radius:0 0 50px 50px;
+            border-radius:0 0 50px 50px;
+        }
+
+
+        .leftHalfCircle{
+            height: 100px;
+            width: 50px;
+            background:#9da;
+            -webkit-border-radius: 50px 0 0  50px;
+            -moz-border-radius: 50px 0 0  50px;
+            border-radius: 50px 0 0 50px;
+        }
+
+        .rightHalfCircle{
+            height: 100px;
+            width: 50px;
+            background:#9da;
+            -webkit-border-radius: 0 50px 50px 0;
+            -moz-border-radius: 0 50px 50px 0;
+            border-radius: 0 50px 50px 0;
+        }
+
+        .leftHalfRetanCircle{
+            height: 100px;
+            width: 250px;
+            background:#9da;
+            -webkit-border-radius: 50px 0 0 50px;
+            -moz-border-radius: 50px 0 0 50px;
+            border-radius: 50px 0 0 50px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+    <!--圆-->
+    <div class="circle"></div>
+
+    <!--上半圆-->
+    <div class="topHalfCircle"></div>
+
+    <!--下半圆-->
+    <div class="bottomHalfCircle"></div>
+
+    <!--左半圆-->
+    <div class="leftHalfCircle"></div>
+
+    <!--右半圆-->
+    <div class="rightHalfCircle"></div>
+
+    <!--左半圆+矩形-->
+    <div class="leftHalfRetanCircle"></div>
+</body>
+</html>
