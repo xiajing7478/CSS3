@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>属性选择器</title>
+    <style type="text/css">
+        table{
+            border: 1px solid red;
+        }
+        td{
+            border-bottom: 1px solid black;
+            border-right: 1px solid black;
+        }
+
+        a[class^="icon"]{
+            background-color: green;
+            color: #fff;
+        }
+        a[href$="pdf"]{
+            background: orange;
+            color: #fff;
+        }
+        a[title*="more"]{
+            background: blue;
+            color: #fff;
+        }
+        div+div{
+            margin-top: 20px;
+        }
+        a[class*="column"]{
+            background: red;
+            color: #fff;
+        }
+
+        a[href*=".doc"]{
+            background: darkgreen;
+            color: #fff;
+        }
+
+        a[title*="box"]{
+            background-color: blue;
+            color: #ffffff;
+        }
+
+    </style>
+</head>
+<body>
+
+    <table>
+        <tr>
+            <td>属性选择器</td>
+            <td>功能描述</td>
+        </tr>
+        <tr>
+            <td>E[alt^="val"]</td>
+            <td>选择匹配元素E，并且E元素定义了属性,其属性值以val开头的任何字符串</td>
+        </tr>
+        <tr>
+            <td>E[alt$="val"]</td>
+            <td>选择匹配元素E，并且E元素定义了属性,其属性值以val结尾的任何字符串</td>
+        </tr>
+        <tr>
+            <td>E[alt*="val"]</td>
+            <td>选择匹配元素E，并且E元素定义了属性,其属性值任意位置包含了val</td>
+        </tr>
+    </table>
+
+    <div>
+        <a href="xxx.pdf">我链接的是PDF文件</a>
+        <a href="#" class="icon">我类名是icon</a>
+        <a href="#" title="我的title是more">我的title是more</a>
+    </div>
+
+    <div>
+        <a href="##" class="columnNews">我的背景想变成红色</a>
+        <a href="##" class="columnVideo">我的背景想变成红色</a>
+        <a href="##" class="columnAboutUs">我的背景想变成红色</a><br/>
+        <a href="1.doc">我的背景想变成绿色</a>
+        <a href="2.doc">我的背景想变成绿色</a><br/>
+        <a href="##" title="this is a box">我的背景想变成蓝色</a>
+        <a href="##" title="box1">我的背景想变成蓝色</a>
+        <a href="##" title="there is two boxs">我的背景想变成蓝色</a>
+    </div>
+
+</body>
+</html>
