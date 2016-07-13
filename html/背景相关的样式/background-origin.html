@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>background-origin</title>
+    <style type="text/css">
+        .wrap{
+            width: 220px;
+            border: 20px dashed;
+            padding: 20px;
+            font-weight: bold;
+            color: #000;
+            background: #ccc url(http://static.mukewang.com/static/img/logo_index.png) no-repeat;
+            position: relative;
+            background-origin: border-box;
+        }
+        .wrap span{
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .content{
+            height: 80px;
+            border: 1px solid #333;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        语法:background-origin ： border-box | padding-box | content-box;
+        参数分别表示背景图片是从边框，还是内边距（默认值），或者是内容区域开始显示。
+
+        需要注意的是，如果背景不是no-repeat，这个属性无效，它会从边框开始显示。
+    </div>
+
+    <div class="wrap">
+        <span>padding</span>
+        <div class="content">content</div>
+    </div>
+</body>
+</html>

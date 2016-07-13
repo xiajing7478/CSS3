@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>文本阴影text-shadow</title>
+    <style type="text/css">
+        .demo{
+            width: 150px;
+            padding: 30px;
+            background: #c5dff8;
+            text-shadow: 2px 2px 3px green;
+            /*background-image: linear-gradient(to right bottom,yellow,blue);*/
+        }
+    </style>
+</head>
+<body>
+    <div>ext-shadow可以用来设置文本的阴影效果。
+        语法:text-shadow: X-Offset Y-Offset blur color;
+        <ul>
+            <li>X-Offset:阴影的水平偏移距离，其值为正值时阴影向右偏移，反之向左偏移；</li>
+            <li>Y-Offset:阴影的垂直偏移距离，如果其值是正值时，阴影向下偏移，反之向上偏移；</li>
+            <li>blur:阴影的模糊程度，其值不能是负值，如果值越大，阴影越模糊，反之阴影越清晰，
+                如果不需要阴影模糊可以将Blur值设置为0；</li>
+            <li>color:是指阴影的颜色，其可以使用rgba色。</li>
+        </ul>
+    </div>
+    <div class="demo">hello world</div>
+</body>
+</html>
