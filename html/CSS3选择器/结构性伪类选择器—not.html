@@ -7,6 +7,24 @@
         input:not([type ="submit"]){
             border: 1px solid red;
         }
+
+        div:not([id="footer"]){
+            background-color: orange;
+            color: #fff;
+        }
+
+        #brand:target {
+            background: orange;
+            color: #fff;
+        }
+        #jake:target {
+            background: blue;
+            color: #fff;
+        }
+        #aron:target {
+            background: red;
+            color: #fff;
+        }
     </style>
 </head>
 <body>
@@ -23,5 +41,23 @@
             <input type="submit" value="Submit" />
         </div>
     </form>  ​
+
+    <div id="header">页头</div>
+    <div id="page">页体</div>
+    <div id="footer">页脚</div>
+
+    <h2><a href="#brand">Brand</a></h2>
+    <div class="menuSection" id="brand">
+        content for Brand
+    </div>
+    <h2><a href="#jake">Brand</a></h2>
+    <div class="menuSection" id="jake">
+        content for jake
+    </div>
+    <h2><a href="#aron">Brand</a></h2>
+    <div class="menuSection" id="aron">
+        content for aron
+    </div>
+
 </body>
 </html>
