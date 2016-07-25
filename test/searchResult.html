@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>searchResult</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <link href="../css/purecss/build/pure-min.css" rel="stylesheet">
+    <link href="../css/Font-Awesome-4.6.3/css/font-awesome.css" rel="stylesheet">
+    <style type="text/css">
+        .m_font{
+            line-height: 2rem;
+            font-size: 1.1rem;
+        }
+        .header{
+            text-align: center;
+            background: #06a9ea;
+            padding: 0.5rem 0rem;
+            color: #fff;
+        }
+        .content{
+            background: #f5f5f5;
+        }
+        ul{
+            list-style: none;
+            padding-left: 0rem;
+            width: 100%;
+            margin: 0;
+            background: #fff;
+        }
+        ul>li{
+            border-bottom: 1px solid #c1c1c1;
+            width: 100%;
+            padding: 1rem 0rem;
+            /*text-align: center;*/
+        }
+
+        #list span{
+            padding-left: 0.5rem;
+        }
+
+        .icon{
+            background: url("../imgs/no-choose.png") no-repeat center;
+            height: 1.5rem;
+            width: 1.5rem;
+            background-size: 100%;
+            display: inline-block;
+        }
+
+        .icon_select{
+            background: url("../imgs/choose.png") no-repeat center;
+            height: 1.5rem;
+            width: 1.5rem;
+            background-size: 100%;
+            display: inline-block;
+        }
+
+        .m_hide{
+            display: none;
+        }
+
+        .btn-primary{
+            background: #06a9ea;
+            width: 100%;
+            height: 3rem;
+            border-radius: 5px;
+            padding: 0;
+            border: none;
+            color: #fff;
+            font-size: 1.1rem;
+        }
+        .m_center{
+            text-align: center;
+        }
+
+        .m_btn{
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+        .m_fontCss{
+            color: #c6c6c6;
+        }
+        .m_color_65{
+            color: #656565;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <div class="pure-g">
+        <div class="pure-u-1-6"><i class="fa fa-2x fa-angle-left" aria-hidden="true"></i></div>
+        <div class="pure-u-2-3 m_font">搜索结果</div>
+        <div class="pure-u-1-6"></div>
+    </div>
+</div>
+<div class="content">
+    <div class="pure-g">
+        <ul id="list">
+            <li>
+                <div class="pure-u-1-1">
+                    <div class="pure-g">
+                        <div class="pure-u-1-2 m_color_65">
+                            <span>朗诗未来街区</span>
+                        </div>
+                        <div class="pure-u-1-3 m_fontCss">
+                            奉贤-金汇
+                        </div>
+                        <div class="pure-u-1-6 m_center">
+                            <input value="box1" type="checkbox" class="m_hide">
+                            <i class="icon"></i>
+                            <!--<input type="checkbox">-->
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="pure-u-1-1">
+                    <div class="pure-g">
+                        <div class="pure-u-1-2 m_color_65">
+                            <span>安亭瑞士华庭</span>
+                        </div>
+                        <div class="pure-u-1-3 m_fontCss">
+                            松江-金汇
+                        </div>
+                        <div class="pure-u-1-6 m_center">
+                            <input value="box2"  type="checkbox" class="m_hide">
+                            <i class="icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="pure-u-1-1">
+                    <div class="pure-g">
+                        <div class="pure-u-1-2 m_color_65">
+                            <span>象屿上海年华</span>
+                        </div>
+                        <div class="pure-u-1-3 m_fontCss">
+                            嘉定-南翔
+                        </div>
+                        <div class="pure-u-1-6 m_center">
+                            <input value="box3"  type="checkbox" class="m_hide">
+                            <i class="icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="pure-u-1-1">
+                    <div class="pure-g">
+                        <div class="pure-u-1-2 m_color_65">
+                            <span>金融街静安中心</span>
+                        </div>
+                        <div class="pure-u-1-3 m_fontCss">
+                            静安-虹桥
+                        </div>
+                        <div class="pure-u-1-6 m_center">
+                            <input type="checkbox" value="box4"  class="m_hide">
+                            <i class="icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="pure-u-1-1">
+                    <div class="pure-g">
+                        <div class="pure-u-1-2 m_color_65">
+                            <span>瑞虹新城悦庭</span>
+                        </div>
+                        <div class="pure-u-1-3 m_fontCss">
+                            虹口-座球场
+                        </div>
+                        <div class="pure-u-1-6 m_center">
+                            <input type="checkbox" value="box5" class="m_hide">
+                            <i class="icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="pure-u-1-1">
+                    <div class="pure-g">
+                        <div class="pure-u-1-2 m_color_65">
+                            <span>翡丽甲第</span>
+                        </div>
+                        <div class="pure-u-1-3 m_fontCss">
+                            杨浦-五角场
+                        </div>
+                        <div class="pure-u-1-6 m_center">
+                            <input type="checkbox" value="box6"  class="m_hide">
+                            <i class="icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="pure-g">
+        <div id="m_btn" class="pure-u-1-1 m_btn">
+            <input id="btn_ok" type="button" class="btn-primary" value="确&nbsp;认">
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        //console.log($(window).height());
+        //$("#m_btn").css({"padding-bottom":$(window).height() - $('body').height()});
+
+        $("#list").on("click","i", function () {
+            var $this = $(this),$parent = $this.parent();
+            if($this.hasClass("icon_select")){
+                $this.removeClass("icon_select");
+                $parent.find('input[type="checkbox"]').prop("checked",false);
+            }else{
+                $this.addClass("icon_select");
+                $parent.find('input[type="checkbox"]').prop("checked",true);
+            }
+        });
+        
+        $("#btn_ok").on("click", function () {
+//            console.log("length:"+ $(".icon_select").length);
+            //console.log("length:"+ $("input[type='checkbox']:checked").length);
+            $("input[type='checkbox']:checked").each(function (index,value) {
+                console.log($(this).parent().find('input[type="checkbox"]').val());
+            })
+        })
+
+//        var arr =[
+//            {
+//                id:1,
+//                title:"朗诗未来街区",
+//                address:"奉贤-金汇"
+//            },
+//            {
+//                id:2,
+//                title:"安亭瑞士华庭",
+//                address:"嘉定-南翔"
+//            },
+//            {
+//                id:3,
+//                title:"象屿上海年华",
+//                address:"松江-金汇"
+//            },
+//            {
+//                id:4,
+//                title:"翡丽甲第",
+//                address:"杨浦-五角场"
+//            },
+//            {
+//                id:5,
+//                title:"瑞虹新城悦庭",
+//                address:"虹口-座球场"
+//            },
+//            {
+//                id:6,
+//                title:"金融街静安中心",
+//                address:"静安-虹桥"
+//            }
+//        ];
+//
+//        $.each(arr, function (index, value) {
+//
+//        })
+
+
+    })
+</script>
+</body>
+</html>

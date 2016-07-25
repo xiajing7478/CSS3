@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>index</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script src="http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js"></script>
+    <link href="../css/purecss/build/pure-min.css" rel="stylesheet">
+    <link href="../css/Font-Awesome-4.6.3/css/font-awesome.css" rel="stylesheet">
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .header{
+            text-align: center;
+            background: #06a9ea;
+            padding: 0.5rem 0rem;
+            color: #fff;
+        }
+
+        .m_font{
+            line-height: 2rem;
+            font-size: 1.2rem;
+        }
+
+        .ss{
+            padding: 0.5rem;
+            border-bottom: 1px solid #c1c1c1;
+            line-height: 2rem;
+        }
+
+        .m_hide{
+            display: none;
+        }
+
+
+        /*城市 begin*/
+
+        #getCity ul{
+            list-style: none;
+            padding-left: 0px;
+        }
+
+        #getCity ul>li{
+            padding: 0.6rem 1rem;
+            border-bottom: 1px solid #ccc;
+        }
+
+        #getCity .city{
+            padding: 1rem 0rem 1rem 1rem;
+        }
+
+        #getCity .m_title{
+            background: #f5f5f5;
+            padding:0.3rem 1rem;
+            color: #7e7e7e;
+        }
+
+        #getCity .m_pad{
+            padding: 1rem 1rem 1rem 0rem;
+            text-align: right;
+            color: #666666;
+            font-size: 0.95rem;
+        }
+
+        #getCity .m_icon{
+            font-size: 1.2rem;
+            padding-left: 0.5rem;
+            color:#999
+        }
+
+        #getCity .m_position{
+            font-size: 0.95rem;
+            color: #999;
+            padding-left: 0.5rem;
+        }
+
+        #getCity .pure-g{
+            width: 100%;
+        }
+
+        #getCity #city_record>div{
+            padding: 0.5rem 0.5rem 0.5rem 1rem;
+            border-bottom: 1px solid #c1c1c1;
+        }
+        /*城市 end*/
+
+         .m_posLocation{
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            overflow: auto;
+            background: #fff;
+            height: 100%;
+            width: 88%;
+            right: 0;
+            -webkit-transform: translateX(0);
+             -ms-transform: translateX(0);
+             transform: translateX(0);
+             -webkit-transition: all .6s;
+             transition: all .6s;
+        }
+
+        .isShow{
+            -webkit-transform:translateX(100%);
+            -ms-transform:translateX(100%);
+            transform:translateX(100%);
+            -webkit-transition:all .6s .5s;
+            transition:all .6s .5s;
+            display: block;
+        }
+
+        .showmask{
+            overflow: hidden !important;
+            height: 100% !important;
+        }
+
+        .filterMask{
+            display: none;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.6);
+            z-index: 999;
+            top: 0;
+            left: 0;
+        }
+
+        .isShowNodelay{
+            -webkit-transition-delay: 0s;
+            -moz-transition-delay: 0s;
+            -ms-transition-delay: 0s;
+            -o-transition-delay: 0s;
+            transition-delay: 0s;
+        }
+
+
+        /*案场 begin*/
+        #getSquare .m_search{
+            background: #f5f5f5;
+            padding: 0.7rem 1rem;
+            text-align: center;
+        }
+
+
+        #getCity #cityName{
+            display: inline-block;
+        }
+
+        #getSquare #search_text{
+            border: none;
+            width: 80%;
+            height: 2rem;
+            padding-left: 0.5rem;
+        }
+
+        #getSquare #search_text:focus{
+            outline: none;
+        }
+
+        #getSquare #btn_search{
+            height: 2rem;
+            width: 80%;
+            float: right;
+            background: #06a9ea;
+            border: none;
+            color: #fff;
+            border-radius: 5px;
+        }
+        #getSquare #btn_search:focus{
+            outline: none;
+        }
+
+        #getSquare .m_bgWhite{
+            background: #fff;
+        }
+
+        #getSquare ul{
+            list-style: none;
+            padding-left: 0rem;
+            width: 100%;
+            margin: 0;
+            background: #fff;
+        }
+        #getSquare ul>li{
+            border-bottom: 1px solid #c1c1c1;
+            width: 100%;
+            padding: 0.5rem 0rem;
+            /*text-align: center;*/
+        }
+
+        #getSquare #list span{
+            padding-left: 0.5rem;
+        }
+
+        #getSquare .icon{
+            background: url("../imgs/no-choose.png") no-repeat center;
+            height: 1.5rem;
+            width: 1.5rem;
+            background-size: 100%;
+            display: inline-block;
+        }
+
+        #getSquare .icon_select{
+            background: url("../imgs/choose.png") no-repeat center;
+            height: 1.5rem;
+            width: 1.5rem;
+            background-size: 100%;
+            display: inline-block;
+        }
+
+
+        #getSquare #btn_ok:focus{
+            outline: none;
+        }
+
+        #getSquare .m_btn{
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+        #getSquare .m_fontCss{
+            color: #c6c6c6;
+        }
+        #getSquare .m_color_65{
+            color: #656565;
+        }
+
+        #getSquare .btn-primary{
+            background: #06a9ea;
+            width: 100%;
+            height: 3rem;
+            border-radius: 5px;
+            padding: 0;
+            border: none;
+            color: #fff;
+            font-size: 1.1rem;
+        }
+
+        #getSquare .btn_disabled{
+            background: #ccc;
+        }
+
+        #getSquare #search_anonymous{
+            text-align: center;
+            padding-top: 3rem;
+            color: #7c7c7c;
+        }
+
+        #getSquare .m_anoyCol{
+            color: #06a9ea;
+            padding-top: 0.8rem;
+        }
+        #getSquare .m_formCss{
+            padding: 1rem;
+            border: 1px solid #c1c1c1;
+            margin: 2rem;
+            border-radius: 9px;
+        }
+
+        #getSquare #m_btnSquare{
+            width: 100%;
+            margin-top: 1rem;
+            height: 3rem;
+            border: none;
+            background: #06a9ea;
+            color: #fff;
+            border-radius: 6px;
+        }
+
+        #getSquare  #m_inputSquare{
+            width: 99%;
+            height: 2.5rem;
+            line-height: 2.5rem;
+            text-indent: 0.5rem;
+        }
+
+        #getSquare #m_inputSquare:focus,#m_btnSquare:focus{
+            outline: none;
+        }
+
+
+        .m_input_error{
+            margin: 1rem 0.5rem;
+            padding: 0.5rem;
+            background: rgb(202, 60, 60);
+            color: #fff;
+            text-align: center;
+        }
+
+        .m_error_tip{
+            border: 1px solid rgb(212,60,60);
+        }
+        /*案场 end*/
+
+
+    </style>
+</head>
+<body>
+<div class="header">
+    <div class="pure-g">
+        <div class="pure-u-1-6"><i class="fa fa-2x fa-angle-left" aria-hidden="true"></i></div>
+        <div class="pure-u-2-3 m_font">index</div>
+        <div class="pure-u-1-6"></div>
+    </div>
+</div>
+<div class="content">
+    <div class="pure-g ss">
+        <div class="pure-u-5-6 tt ">
+            点击我
+        </div>
+        <div class="pure-u-1-6">
+            <i class="fa fa-2x fa-angle-right" aria-hidden="true"></i>
+        </div>
+    </div>
+    <div class="pure-g ss">
+        <div class="pure-u-5-6 square">
+            您所在的案场或机构
+        </div>
+        <div class="pure-u-1-6">
+            <i class="fa fa-2x fa-angle-right" aria-hidden="true"></i>
+        </div>
+    </div>
+    <div class="pure-g ss">
+        <div class="pure-u-5-6 district">
+            您所在的区域
+        </div>
+        <div class="pure-u-1-6">
+            <i class="fa fa-2x fa-angle-right" aria-hidden="true"></i>
+        </div>
+    </div>
+    <div class="pure-g ss">
+        <div class="pure-u-5-6 ">
+            点击我
+        </div>
+        <div class="pure-u-1-6">
+            <i class="fa fa-2x fa-angle-right" aria-hidden="true"></i>
+        </div>
+    </div>
+    <div class="pure-g ss">
+        <div class="pure-u-5-6 ">
+            点击我
+        </div>
+        <div class="pure-u-1-6">
+            <i class="fa fa-2x fa-angle-right" aria-hidden="true"></i>
+        </div>
+    </div>
+    <div class="pure-g ss">
+        <div class="pure-u-5-6 ">
+            点击我
+        </div>
+        <div class="pure-u-1-6">
+            <i class="fa fa-2x fa-angle-right" aria-hidden="true"></i>
+        </div>
+    </div>
+    <div class="pure-g ss">
+        <div class="pure-u-5-6 ">
+            点击我
+        </div>
+        <div class="pure-u-1-6">
+            <i class="fa fa-2x fa-angle-right" aria-hidden="true"></i>
+        </div>
+    </div>
+    <div class="pure-g ss">
+        <div class="pure-u-5-6 ">
+            点击我
+        </div>
+        <div class="pure-u-1-6">
+            <i class="fa fa-2x fa-angle-right" aria-hidden="true"></i>
+        </div>
+    </div>
+    <div class="pure-g ss">
+        <div class="pure-u-5-6 ">
+            点击我
+        </div>
+        <div class="pure-u-1-6">
+            <i class="fa fa-2x fa-angle-right" aria-hidden="true"></i>
+        </div>
+    </div>
+    <div class="pure-g ss">
+        <div class="pure-u-5-6 ">
+            点击我
+        </div>
+        <div class="pure-u-1-6">
+            <i class="fa fa-2x fa-angle-right" aria-hidden="true"></i>
+        </div>
+    </div>
+    <div class="pure-g ss">
+        <div class="pure-u-5-6 ">
+            点击我
+        </div>
+        <div class="pure-u-1-6">
+            <i class="fa fa-2x fa-angle-right" aria-hidden="true"></i>
+        </div>
+    </div>
+    <div class="pure-g ss">
+        <div class="pure-u-5-6 ">
+            点击我
+        </div>
+        <div class="pure-u-1-6">
+            <i class="fa fa-2x fa-angle-right" aria-hidden="true"></i>
+        </div>
+    </div>
+    <div class="pure-g ss">
+        <div class="pure-u-5-6 ">
+            点击我
+        </div>
+        <div class="pure-u-1-6">
+            <i class="fa fa-2x fa-angle-right" aria-hidden="true"></i>
+        </div>
+    </div>
+    <div class="pure-g ss">
+        <div class="pure-u-5-6 ">
+            点击我
+        </div>
+        <div class="pure-u-1-6">
+            <i class="fa fa-2x fa-angle-right" aria-hidden="true"></i>
+        </div>
+    </div>
+    <div class="pure-g ss">
+        <div class="pure-u-5-6 ">
+            点击我
+        </div>
+        <div class="pure-u-1-6">
+            <i class="fa fa-2x fa-angle-right" aria-hidden="true"></i>
+        </div>
+    </div>
+</div>
+
+<div id="getCity" class="pure-g isShow m_posLocation isShowNodelay">
+    <div class="pure-u-1-1 header">
+        <div class="pure-g">
+            <div class="pure-u-1-6 back"><i class="fa fa-2x fa-angle-left" aria-hidden="true"></i></div>
+            <div class="pure-u-2-3 m_font">选择城市</div>
+            <div class="pure-u-1-6"></div>
+        </div>
+    </div>
+    <div class="pure-g">
+        <div class="pure-u-2-3">
+            <div id="city" class="city"></div>
+
+        </div>
+        <div class="pure-u-1-3">
+            <div class="m_pad">点击进入<i class="fa fa-angle-right m_icon"  aria-hidden="true"></i></div>
+        </div>
+    </div>
+
+    <div class="pure-g">
+        <div class="pure-u-1">
+            <p class="m_title">城市</p>
+        </div>
+        <div class="pure-u-1-1">
+            <div class="pure-g" id="city_record">
+                <div class="pure-u-1">上海</div>
+                <div class="pure-u-1">北京</div>
+                <div class="pure-u-1">安徽</div>
+                <div class="pure-u-1">成都</div>
+                <div class="pure-u-1">上海1</div>
+                <div class="pure-u-1">北京1</div>
+                <div class="pure-u-1">安徽1</div>
+                <div class="pure-u-1">成都1</div>
+                <div class="pure-u-1">上海2</div>
+                <div class="pure-u-1">北京2</div>
+                <div class="pure-u-1">安徽2</div>
+                <div class="pure-u-1">成都2</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="getSquare" class="pure-g isShow m_posLocation isShowNodelay">
+    <div class="pure-u-1-1 header">
+        <div class="pure-g">
+            <div id="goBack" class="pure-u-1-6"><i class="fa fa-2x fa-angle-left" aria-hidden="true"></i></div>
+            <div id="pos_title" class="pure-u-2-3 m_font">案场搜索</div>
+            <div class="pure-u-1-6"></div>
+        </div>
+    </div>
+
+    <div class="pure-u-1-1 content">
+        <div id="m_search" class="pure-g m_search">
+            <div class="pure-u-3-4 m_bgWhite">
+                <i class="fa fa-search" style="color:#ddd;"  aria-hidden="true"></i>
+                <input type="text" id="search_text" placeholder="请输入您所在的案场名称">
+            </div>
+            <div class="pure-u-1-4">
+                <input type="button" id="btn_search" value="确认" >
+            </div>
+        </div>
+        <div class="pure-g m_hide" id="search_anonymous">
+            <div class="pure-u-1-1">
+                搜索无结果,提交自己的案场吧!<p id="m_anoyCol" class="m_anoyCol">点击提交</p>
+            </div>
+            <div id="form_square" class="pure-u-1-1 m_hide" >
+                <div class="pure-g m_formCss">
+                    <div class="pure-u-1 ">
+                        <input type="text" id="m_inputSquare" placeholder="请输入案场名称">
+                    </div>
+                    <div class="pure-u-1">
+                        <input type="button" id="m_btnSquare" value="立即提交">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pure-g m_hide" id="list">
+            <ul class="pure-u-1-1">
+                <li>
+                    <div class="pure-u-1-1">
+                        <div class="pure-g">
+                            <div class="pure-u-1-2 ">
+                                <span class="m_color_65">朗诗未来街区</span>
+                            </div>
+                            <div class="pure-u-1-3 m_fontCss">
+                                奉贤-金汇
+                            </div>
+                            <div class="pure-u-1-6 m_center">
+                                <div class="m_hide">朗诗未来街区</div>
+                                <i class="icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="pure-u-1-1">
+                        <div class="pure-g">
+                            <div class="pure-u-1-2 ">
+                                <span class="m_color_65">安亭瑞士华庭</span>
+                            </div>
+                            <div class="pure-u-1-3 m_fontCss">
+                                松江-金汇
+                            </div>
+                            <div class="pure-u-1-6 m_center">
+                                <div class="m_hide">安亭瑞士华庭</div>
+                                <i class="icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="pure-u-1-1">
+                        <div class="pure-g">
+                            <div class="pure-u-1-2 ">
+                                <span class="m_color_65">象屿上海年华</span>
+                            </div>
+                            <div class="pure-u-1-3 m_fontCss">
+                                嘉定-南翔
+                            </div>
+                            <div class="pure-u-1-6 m_center">
+                                <div class="m_hide">象屿上海年华</div>
+                                <i class="icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="pure-u-1-1">
+                        <div class="pure-g">
+                            <div class="pure-u-1-2 ">
+                                <span class="m_color_65">金融街静安中心</span>
+                            </div>
+                            <div class="pure-u-1-3 m_fontCss">
+                                静安-虹桥
+                            </div>
+                            <div class="pure-u-1-6 m_center">
+                                <div class="m_hide">金融街静安中心</div>
+                                <i class="icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="pure-u-1-1">
+                        <div class="pure-g">
+                            <div class="pure-u-1-2 ">
+                                <span class="m_color_65">瑞虹新城悦庭</span>
+                            </div>
+                            <div class="pure-u-1-3 m_fontCss">
+                                虹口-座球场
+                            </div>
+                            <div class="pure-u-1-6 m_center">
+                                <div class="m_hide">瑞虹新城悦庭</div>
+                                <i class="icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="pure-u-1-1">
+                        <div class="pure-g">
+                            <div class="pure-u-1-2 ">
+                                <span class="m_color_65">翡丽甲第</span>
+                            </div>
+                            <div class="pure-u-1-3 m_fontCss">
+                                杨浦-五角场
+                            </div>
+                            <div class="pure-u-1-6 m_center">
+                                <div class="m_hide">翡丽甲第</div>
+                                <i class="icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div id="m_btn" class="pure-u-1-1 m_btn">
+                <input id="btn_ok" disabled  type="button" class="btn-primary btn_disabled" value="确&nbsp;认">
+            </div>
+        </div>
+        <div id="error_msg" class="pure-g m_hide">
+            <div class="pure-u-1 m_input_error">
+                <p>请先输入您所在的案场</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style type="text/css">
+    #getDistrict #m_content{
+        margin: 2rem 1rem;
+        border: 1px solid #999;
+        text-align: center;
+    }
+
+    #getDistrict #m_content .m_border{
+        margin: 0.75rem 0.5rem;
+        border: 1px dashed #c5c5c5;
+        height: 2.5rem;
+        line-height: 2.5rem;
+    }
+
+
+    #getDistrict .m_disPad{
+        padding: 0rem 1rem;
+    }
+
+    #getDistrict #btn_district{
+        width: 100%;
+        height: 3rem;
+        line-height: 3rem;
+        background: #06a9ea;
+        color: #fff;
+        border: 1px solid #06a9ea;
+        border-radius: 5px;
+    }
+
+    #getDistrict .m_selected{
+        background: #06a9ea;
+    }
+
+
+</style>
+<div id="getDistrict" class="pure-g isShow m_posLocation isShowNodelay">
+    <div class="pure-u-1-1 header">
+        <div class="pure-g">
+            <div class="pure-u-1-6 back"><i class="fa fa-2x fa-angle-left" aria-hidden="true"></i></div>
+            <div class="pure-u-2-3 m_font">选择区域</div>
+            <div class="pure-u-1-6"></div>
+        </div>
+    </div>
+    <div class="pure-u-1-1 content">
+        <div class="pure-g" id="m_content">
+            <div class="pure-u-1-4">
+                <div class="pure-g ">
+                    <div class="pure-u-1 m_border">北京2</div>
+                </div>
+            </div>
+            <div class="pure-u-1-4">
+                <div class="pure-g ">
+                    <div class="pure-u-1 m_border">安徽2</div>
+                </div>
+            </div>
+            <div class="pure-u-1-4">
+                <div class="pure-g ">
+                    <div class="pure-u-1 m_border">成都</div>
+                </div>
+            </div>
+            <div class="pure-u-1-4">
+                <div class="pure-g ">
+                    <div class="pure-u-1 m_border">上海1</div>
+                </div>
+            </div>
+            <div class="pure-u-1-4">
+                <div class="pure-g ">
+                    <div class="pure-u-1 m_border">白山</div>
+                </div>
+            </div>
+            <div class="pure-u-1-4">
+                <div class="pure-g ">
+                    <div class="pure-u-1 m_border">大连</div>
+                </div>
+            </div>
+            <div class="pure-u-1-4">
+                <div class="pure-g ">
+                    <div class="pure-u-1 m_border">合肥</div>
+                </div>
+            </div>
+            <div class="pure-u-1-4">
+                <div class="pure-g ">
+                    <div class="pure-u-1 m_border">南京</div>
+                </div>
+            </div>
+            <div class="pure-u-1-4">
+                <div class="pure-g ">
+                    <div class="pure-u-1 m_border">黄山</div>
+                </div>
+            </div>
+            <div class="pure-u-1-4">
+                <div class="pure-g ">
+                    <div class="pure-u-1 m_border">九华山</div>
+                </div>
+            </div>
+
+        </div>
+        <div class="pure-g">
+            <div class="pure-u-1 m_disPad">
+                <input type="button" id="btn_district" value="确&nbsp;认">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="pure-g filterMask"></div>
+
+<script type="text/javascript">
+    
+    /**
+     *区域
+     */
+    var strDistrict="";
+    $(".district").on("click", function () {
+        $("#getDistrict").removeClass("isShow");
+        $("html,body").addClass("showmask");
+        $(".filterMask").css({"display":"block"});
+    });
+    
+    $("#m_content .m_border").on("click", function () {
+        var $parent = $(this).parent().parent().parent();
+        $parent.find(".m_border").removeClass("m_selected");
+        $(this).addClass("m_selected");
+        strDistrict = $(this).text();
+    });
+
+    $("#btn_district").on("click", function () {
+        console.log(strDistrict);
+    });
+
+
+    /**
+     * 选择城市
+     */
+
+    $("#city").append("<div id='cityName'>"+$.trim(remote_ip_info['city'])+"</div>").append('<span class="m_position">GPS定位</span>');
+
+    $("#getCity").on("click",".m_pad",function(){
+
+        $("#getCity").addClass("isShow");
+        $("html,body").removeClass("showmask");
+        $(".filterMask").css({"display":"none"});
+        $(".tt").text($.trim($("#getCity #cityName").text()));
+    });
+
+    $(".tt").on("click", function () {
+        $("#getCity").removeClass("isShow");
+        //$("#getCity").animate({"width":"88%"},600);
+        $("html,body").addClass("showmask");
+        $(".filterMask").css({"display":"block"});
+    })
+
+
+
+    $("#city_record").on("click","div", function () {
+//    $("#getCity").on("click","ul>li", function () {
+        console.log("haha");
+        $("#getCity").addClass("isShow");
+        $("html,body").removeClass("showmask");
+        $(".filterMask").css({"display":"none"});
+        $(".tt").text($.trim($(this).text()));
+    });
+
+    $(".back").on("click", function () {
+        $("#getCity").addClass("isShow");
+        $("html,body").removeClass("showmask");
+        $(".filterMask").css({"display":"none"});
+    });
+
+
+    /**
+     *案场
+     */
+    var selectVal ="";
+    $(".square").on("click", function () {
+        $("#getSquare").removeClass("isShow");
+        $("html,body").addClass("showmask");
+        $(".filterMask").css({"display":"block"});
+        $("#goBack").addClass("assist");
+    });
+
+
+
+    $("#getSquare").on("click",".assist", function () {
+        $("#getSquare").addClass("isShow");
+        $("html,body").removeClass("showmask");
+        $(".filterMask").css({"display":"none"});
+        $("#error_msg").addClass("m_hide");
+        $("#form_square").addClass("m_hide");
+        $("#search_anonymous").addClass("m_hide");
+    });
+
+    $("#btn_search").on("click", function () {
+        var val = $.trim($("#search_text").val());
+        if("" == val || null == val ){
+            $("#error_msg").removeClass("m_hide");
+        }else if(!isNaN(val)){
+            $("#search_anonymous").removeClass("m_hide");
+        }else{
+            $("#error_msg").addClass("m_hide");
+            $("#list").removeClass("m_hide");
+            $("#m_search").hide();
+            $("#pos_title").text("搜索结果");
+            $("#search_anonymous").addClass("m_hide");
+            $("#goBack").removeClass("assist").addClass("assist_result");
+        }
+    });
+
+
+    $("#search_text").on("keyup", function () {
+        var val = $.trim($(this).val());
+        if("" == val || null == val ){
+            //$("#error_msg").removeClass("m_hide");
+        }else{
+            $("#error_msg").addClass("m_hide");
+        }
+    });
+
+    $(".back").on("click", function () {
+        $("#getCity").addClass("isShow");
+        $("html,body").removeClass("showmask");
+        $(".filterMask").css({"display":"none"});
+    });
+
+    //案场搜索无结果
+    $("#m_anoyCol").on("click", function () {
+        $("#form_square").removeClass("m_hide");
+    });
+
+    $("#m_btnSquare").on("click", function () {
+        var val = $.trim($("#m_inputSquare").val());
+        if("" == val || null == val ){
+            $("#m_inputSquare").addClass("m_error_tip");
+        }else{
+            $("#m_inputSquare").removeClass("m_error_tip");
+            $("#m_inputSquare").val("");
+            $("#getSquare").addClass("isShow");
+            $("html,body").removeClass("showmask");
+            $(".filterMask").css({"display":"none"});
+            $("#error_msg").addClass("m_hide");
+            $("#form_square").addClass("m_hide");
+            $("#search_anonymous").addClass("m_hide");
+            $("#search_text").val("");
+            $(".square").text(val);
+        }
+    });
+
+    /**
+     * 搜索结果
+     */
+    $("#list").on("click","li", function (e) {
+
+        var $this=$(this),$child=$(this).find("i"),$btn=$("#btn_ok");
+        if($child.hasClass("icon_select")){
+            $child.removeClass("icon_select");
+        }else{
+            $this.parent().find("i").removeClass("icon_select");
+            $child.addClass("icon_select");
+            selectVal = $this.find(".m_color_65").text();
+            console.log(selectVal);
+        }
+
+        if($("#list .icon_select").length >=1){
+            $btn.attr("disabled",false).removeClass("btn_disabled");
+        }else{
+            $btn.attr("disabled",true).addClass("btn_disabled");
+        }
+
+        return false;
+
+
+
+//        var $this = $(this),$parent = $this.parent(),
+//            $parents=$this.parent().parent().parent().parent().parent(),
+//            $btn=$("#btn_ok");
+//
+//        if($this.hasClass("icon_select")){
+//            $this.removeClass("icon_select");
+//        }else{
+//            $parents.find("i").removeClass("icon_select");
+//            $this.addClass("icon_select");
+//            selectVal = $this.parent().find('.m_hide').text();
+//        }
+//
+//        if($("#list .icon_select").length >=1){
+//            $btn.attr("disabled",false).removeClass("btn_disabled");
+//        }else{
+//            $btn.attr("disabled",true).addClass("btn_disabled");
+//        }
+    });
+
+    $("#btn_ok").on("click", function () {
+        $("#getSquare").addClass("isShow");
+        $("html,body").removeClass("showmask");
+        $(".filterMask").css({"display":"none"});
+        $("#error_msg").addClass("m_hide");
+        $("#form_square").addClass("m_hide");
+        $("#search_anonymous").addClass("m_hide");
+        $("#search_text").val("");
+
+        $("#list").addClass("m_hide");
+        $("#m_search").show();
+        $(".square").text(selectVal);
+    });
+
+    //搜索案场结果的返回
+    $("#getSquare").on("click",".assist_result",function () {
+        $("#m_search").show();
+        $("#list").addClass("m_hide");
+        $("#pos_title").text("案场搜索");
+        $("#goBack").addClass("assist").removeClass("assist_result");
+    })
+</script>
+</body>
+</html>

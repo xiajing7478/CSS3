@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=0.5,minimum-scale=0.5,maximum-scale=0.5,user-scalable=no" />
+		<style type="text/css">
+			html,body,div,header,p{
+				padding: 0;
+				margin: 0;
+			}
+			
+			/*header{
+				height: 1rem;
+				width: 7.5rem;
+				background: #06a9ea;
+				color: white;
+				font-size: 0.4rem;
+				line-height: 1rem;
+				text-align: center;				
+			}*/
+			#question-content{
+				
+				width: 7.2rem;
+				margin-left: 0.3rem;
+				font-size: 0.28rem;
+				
+			}
+			#question-content>.question-text{
+				/*height: 0.9rem;*/
+				/*line-height: 0.9rem;*/
+				padding: 0.25rem 0rem;
+				border-bottom: #dcdcdc solid 0.02rem;
+			}
+			#question-content>.question-answer{
+				margin-right: 0.3rem;				
+			}
+			#question-content>.question-answer>p{
+				margin-top: 0.3rem;
+				line-height: 0.5rem;
+				color: #999;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				document.documentElement.style.fontFamily="微软雅黑";
+				document.documentElement.style.fontSize = document.documentElement.clientWidth/7.5 + "px";
+				window.addEventListener("resize",setFontRem,false);
+				function setFontRem(){
+					document.documentElement.style.fontSize = document.documentElement.clientWidth/7.5 + "px";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<!--<header>问答详情</header>-->
+		<div id="question-content">
+			<div id="question-text" class="question-text"></div>
+			<div id="question-answer" class="question-answer"></div>
+		</div>
+		<script type="text/javascript" src="../js/jquery.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+
+				function GetRequest() {
+					var url = location.search;
+					var theRequest = new Object();
+					if (url.indexOf("?") != -1) {
+						var str = url.substr(1);
+						strs = str.split("&");
+						for (var i = 0; i < strs.length; i++) {
+							theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+						}
+					}
+					return theRequest;
+				}
+				var request = GetRequest();
+
+				var contentArr=[
+					{
+						id:1,
+						title:"怎么报备客户？报备客户有哪些注意事项？",
+						content:"1、通过楼盘直接报备（选择楼盘，点击立即报备，选择客户，报备即可）。2、选择客户报备（从客户列表选择客户，选择相应的楼盘，直接报备即可）。注意事项：确认客户信息真实正确无误"
+					},
+					{
+						id:2,
+						title:"添加客户时，手机号码录错了，能改吗？怎么改？",
+						content:"不能改,重新录入该客户的姓名及手机号"
+					},
+					{
+						id:3,
+						title:"为什么要身份认证和实名认证？",
+						content:"1、身份认证是为了确认经纪人的信息真实有效。2、进行实名认证是为了绑定银行卡来提现"
+					},
+					{
+						id:4,
+						title:"客户列表和客户跟踪到哪里查看？",
+						content:"请点击客户按钮，到客户管理里面查看客户列表和跟踪客户的状态"
+					},
+					{
+						id:5,
+						title:"怎么将楼盘添加到我的屋店里？",
+						content:"请到“楼盘库”，点击需要添加的楼盘，再点击“加入屋店”，选择分类，确认即可"
+					},
+					{
+						id:6,
+						title:"奖金佣金怎么结算？流程有多久？",
+						content:"根据每个楼盘的佣金规则结算，流程时间以实际审核情况为准"
+					},
+					{
+						id:7,
+						title:"如果我换了经纪公司，还能拿到佣金吗？",
+						content:"可以"
+					},
+					{
+						id:8,
+						title:"一定要成交以后才能获得佣金吗？",
+						content:"每个楼盘的结佣节点和规则不同，有的楼盘在下定、签约时有佣金，有的需要成交后进行结佣"
+					},
+					{
+						id:9,
+						title:"佣金需要交纳手续费吗？",
+						content:"佣金发放时候会按国家规定扣除个人所得税，其他无须任何费用"
+					},
+					{
+						id:10,
+						title:"我的钱包里面的钱都能提现吗？",
+						content:"不是，只有已结的是可以提现的"
+					},
+					{
+						id:11,
+						title:"哪些情况推荐了客户无法获得佣金？",
+						content:"1、过成交保护期的客户无法获取佣金。2、报备的姓名、手机号码与成交客户的姓名、手机号码不一致，即视为无效成交，无法获取佣金"
+					},
+					{
+						id:12,
+						title:"每次和每天的提现金额有限定吗？",
+						content:"提现说明：1.每次提现最低100元，上不封顶。2.每周三、周五为固定提现日，每个提现日仅可提现一次。备注：如遇平台系统故障或网络故障，提现可能会稍有延迟，敬请谅解"
+					},
+					{
+						id:13,
+						title:"如果报备的客户姓名、手机号码与认购客户的姓名、手机号码不一致，怎么办？",
+						content:"若报备的客户姓名、手机号码与签约成交客户的姓名、手机号码不一致，可在客户成交后7天之内提供相关关系证明（父母、子女、夫妻关系）进行沟通。若客户成交7天之后（以签约成交日来算），经纪人未向屋拉公社提出申请，则不予处理"
+					},
+					{
+						id:14,
+						title:"带看过的客户，客户成交保护期是多久？",
+						content:"不同项目客户保护期不同，请看项目详情页中的“报备须知”"
+					},
+					{
+						id:15,
+						title:"报备客户后是不是马上就能发起带看？",
+						content:"是的"
+					},
+					{
+						id:16,
+						title:"我带看的客户，其他经纪人还能再带看吗？带看保护期是多久？",
+						content:" 带看成功的客户，将进入成交保护期，保护期内其他经纪人不能对该客户进行报备、带看"
+					},
+					{
+						id:17,
+						title:"如果客户过了成交保护期之后才成交，那么经纪人还能有业绩吗？",
+						content:"不能"
+					},
+					{
+						id:18,
+						title:"什么是无效客户啊？",
+						content:"与开发商客户重复的客户"
+					},
+					{
+						id:19,
+						title:"如果我推荐带看的客户，在最后成交时，不是客户本人购买，比如是朋友或者亲戚，可以算推荐成交吗？",
+						content:"朋友或者亲戚不算;如果是父母、夫妻、子女，请提供相关关系证明"
+					},
+					{
+						id:20,
+						title:"推荐完客户如何查看客户购房进度？",
+						content:"点击客户按钮，到客户管理直接查看或者通过搜索客户名字查看客户详情"
+					},
+					{
+						id:21,
+						title:"一个客户在该案场买房了，他如果想再多买一套，还可以再次推荐这个客户到这个案场吗？",
+						content:"如果同时买两套，算两套的业绩；其他情况一律按一套计算"
+					},
+					{
+						id:22,
+						title:"客户实际到访或者成交了，但是手机未显示到访，如何处理？",
+						content:"可以联系接收案场的助理或者拨打客服热线400-*******，屋拉会对客户进行核查，并将最终处理结果反馈给经纪人"
+					},
+					{
+						id:23,
+						title:"推荐到访、下定、推荐成交，会有即时的提示信息吗？",
+						content:"有，可以点击“屋拉秘书”查看消息提示"
+					},
+					{
+						id:24,
+						title:"案场助理有人管理吗？如果客户不满意接待的案场助理，可以换人吗？",
+						content:"有，如遇这种情况，请拨打客服热线400-*******，进行进一步的处理"
+					}
+
+				];
+
+				$.each(contentArr,function(index,value){
+					if(value.id == request["id"]){
+						initValue(value);
+					}
+				});
+
+				function initValue(obj){
+					var arr = obj.content.split("。"), strHtml="";
+					$.each(arr,function(index,value){
+						strHtml+="<p>"+arr[index]+"。</p>"
+					});
+					$("#question-content").find("#question-answer").append(strHtml)
+							.end().find("#question-text").text(obj.title);
+				}
+			})
+		</script>
+	</body>
+</html>
+
+

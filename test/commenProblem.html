@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=0.5,minimum-scale=0.5,maximum-scale=0.5,user-scalable=no" />
+		<script type="text/javascript" src="../js/jquery.js"></script>
+		<style type="text/css">
+			html,body,div,ol,li,header{
+				padding: 0;
+				margin: 0;
+			}
+			a{
+				text-decoration: none;
+				
+			}
+			
+			#item-container{
+				/*display: -webkit-flex;
+				display: flex;*/
+				width: 7.5rem;
+				height: 0.7rem;
+				border-bottom: #dcdcdc solid 0.02rem;
+			}
+			#item-container>.item-list{
+				float: left;
+				width: 33%;
+				height: 100%;
+				color: #333;
+				text-align: center;
+				line-height: 0.7rem;
+				font-size: 0.22rem;
+				border-right:#dcdcdc solid 0.02rem;
+			}
+			#item-container>.item-list:last-child{
+				border-right: none;
+			}
+			.active{
+				background: rgb(231,231,231);
+			}
+			#problem-content{
+				width: 7.2rem;
+			}
+			#problem-content>ol{
+				height: 100%;
+				width: 100%;
+				margin-left: 0.3rem;
+			}
+			#problem-content>ol .problem-list{
+				/*height: 1rem;*/
+				/*line-height: 1rem;*/
+				padding: 0.25rem 0;
+				font-size: 0.3rem;
+				color: #333;
+				border-bottom: #dcdcdc solid 0.02rem;
+				background: url(images/top_to.jpg) no-repeat 6.7rem center;
+				background-size: 3%;
+				list-style: none;
+			}
+
+			ol:not(:first-child){
+				display: none;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				document.documentElement.style.fontFamily="微软雅黑";
+				document.documentElement.style.fontSize = document.documentElement.clientWidth/7.5 + "px";
+				window.addEventListener("resize",setFontRem,false);
+				function setFontRem(){
+					document.documentElement.style.fontSize = document.documentElement.clientWidth/7.5 + "px";
+				}
+			}
+		</script>
+	</head>
+	<body>
+	
+		<div id="item-container">
+			<div class="item-list active" name="guide">新手指南</div>
+			<div class="item-list" name="reward">奖励咨询</div>
+			<div class="item-list" name="service">业务咨询</div>
+		</div>
+		<div id="problem-content">
+			<ol class="guide">
+				<a href="createHouse.html?id=1"><li class="problem-list">1、怎么报备客户？报备客户有哪些注意事项？ </li></a>
+				<a href="createHouse.html?id=2"><li class="problem-list">2、添加客户时，手机号码录错了，能改吗？怎么改？</li></a>
+				<a href="createHouse.html?id=3"><li class="problem-list">3、为什么要身份认证和实名认证？</li></a>
+				<a href="createHouse.html?id=4"><li class="problem-list">4、客户列表和客户跟踪到哪里查看？</li></a>
+				<a href="createHouse.html?id=5"><li class="problem-list">5、怎么将楼盘添加到我的屋店里？</li></a>
+			</ol>
+
+			<ol class="reward">
+				<a href="createHouse.html?id=6"><li class="problem-list">1、奖金佣金怎么结算？流程有多久？ </li></a>
+				<a href="createHouse.html?id=7"><li class="problem-list">2、如果我换了经纪公司，还能拿到佣金吗？</li></a>
+				<a href="createHouse.html?id=8"><li class="problem-list">3、一定要成交以后才能获得佣金吗？</li></a>
+				<a href="createHouse.html?id=9"><li class="problem-list">4、佣金需要交纳手续费吗？</li></a>
+				<a href="createHouse.html?id=10"><li class="problem-list">5、我的钱包里面的钱都能提现吗？</li></a>
+				<a href="createHouse.html?id=11"><li class="problem-list">6、哪些情况推荐了客户无法获得佣金？</li></a>
+				<a href="createHouse.html?id=12"><li class="problem-list">7、每次和每天的提现金额有限定吗？</li></a>
+				<a href="createHouse.html?id=13"><li class="problem-list">8、如果报备的客户姓名、手机号码与认购客户的姓名、手机号码不一致，怎么办？</li></a>
+			</ol>
+
+			<ol class="service">
+				<a href="createHouse.html?id=14"><li class="problem-list">1、带看过的客户，客户成交保护期是多久？ </li></a>
+				<a href="createHouse.html?id=15"><li class="problem-list">2、报备客户后是不是马上就能发起带看？</li></a>
+				<a href="createHouse.html?id=16"><li class="problem-list">3、我带看的客户，其他经纪人还能再带看吗？带看保护期是多久？</li></a>
+				<a href="createHouse.html?id=17"><li class="problem-list">4、如果客户过了成交保护期之后才成交，那么经纪人还能有业绩吗？</li></a>
+				<a href="createHouse.html?id=18"><li class="problem-list">5、什么是无效客户啊？</li></a>
+				<a href="createHouse.html?id=19"><li class="problem-list">6、如果我推荐带看的客户，在最后成交时，不是客户本人购买，比如是朋友或者亲戚，可以算推荐成交吗？</li></a>
+				<a href="createHouse.html?id=20"><li class="problem-list">7、推荐完客户如何查看客户购房进度？</li></a>
+				<a href="createHouse.html?id=21"><li class="problem-list">8、一个客户在该案场买房了，他如果想再多买一套，还可以再次推荐这个客户到这个案场吗？</li></a>
+				<a href="createHouse.html?id=22"><li class="problem-list">9、客户实际到访或者成交了，但是手机未显示到访，如何处理？</li></a>
+				<a href="createHouse.html?id=23"><li class="problem-list">10、推荐到访、下定、推荐成交，会有即时的提示信息吗？</li></a>
+				<a href="createHouse.html?id=24"><li class="problem-list">11、案场助理有人管理吗？如果客户不满意接待的案场助理，可以换人吗？</li></a>
+			</ol>
+		</div>
+
+		<script type="text/javascript">
+
+
+
+			$(document).ready(function(){
+				var itemContainer = $("#item-container");
+				itemContainer.on("click","div.item-list",function(){
+					$(this).addClass("active").siblings().removeClass("active");
+					$("#problem-content").find(".".concat($(this).attr("name"))).siblings().css("display","none")
+							.end().css("display","block");
+				})
+			})
+		</script>
+	</body>
+</html>
