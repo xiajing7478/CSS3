@@ -3,8 +3,55 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>动画播放时间animation-duration</title>
+    <style type="text/css">
+        /*.wrap{*/
+            /*height: 150px;*/
+            /*width: 150px;*/
+            /*background: green;*/
+            /*text-align: center;*/
+            /*line-height: 150px;*/
+            /*border: 1px solid #c1c1c1;*/
+        /*}*/
+        /*@keyframes rect {*/
+            /*from{*/
+                /*border-radius: 0px;*/
+            /*}*/
+            /*to{*/
+                /*border-radius: 150px;*/
+            /*}*/
+        /*}*/
+
+        /*.wrap:hover{*/
+            /*animation: rect 10s ease 0.1s;*/
+        /*}*/
+
+
+        .wrap{
+            height: 150px;
+            width: 150px;
+            background: green;
+            text-align: center;
+            line-height: 150px;
+            border: 1px solid #c1c1c1;
+            -webkit-transition: border-radius 3s linear 0s;
+            -moz-transition: border-radius 3s linear 0s;
+            -ms-transition: border-radius 3s linear 0s;
+            -o-transition: border-radius 3s linear 0s;
+            transition: border-radius 3s linear 0s;
+        }
+        
+        div:hover{
+            border-radius: 150px;
+        }
+        
+
+    </style>
 </head>
 <body>
+
+    <div class="wrap">
+
+    </div>
 
 </body>
 </html>
