@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>调用动画</title>
+    <style type="text/css">
+        @keyframes round{
+            from{
+                -webkit-transform: translateX(0);
+                -moz-transform: translateX(0);
+                -ms-transform: translateX(0);
+                -o-transform: translateX(0);
+                transform: translateX(0);
+            }
+            25%{
+                -webkit-transform: translate(135px,0px);
+                -moz-transform: translate(135px,0px);
+                -ms-transform: translate(135px,0px);
+                -o-transform: translate(135px,0px);
+                transform: translate(135px,0px);
+
+            }
+            50%{
+                -webkit-transform: translate(135px,135px);
+                -moz-transform: translate(135px,135px);
+                -ms-transform: translate(135px,135px);
+                -o-transform: translate(135px,135px);
+                transform: translate(135px,135px);
+            }
+            75%{
+                -webkit-transform: translate(0,135px);
+                -moz-transform: translate(0,135px);
+                -ms-transform: translate(0,135px);
+                -o-transform: translate(0,135px);
+                transform: translate(0,135px);
+            }
+            to{
+                -webkit-transform: translateY(0);
+                -moz-transform: translateY(0);
+                -ms-transform: translateY(0);
+                -o-transform: translateY(0);
+                transform: translateY(0);
+
+            }
+        }
+
+        .wrap{
+            height: 150px;
+            width: 150px;
+            border: 1px dotted red;
+
+        }
+
+        .wrap>span{
+            height: 15px;
+            width: 15px;
+            border-radius: 15px;
+            display: inline-block;
+            background: orange;
+            animation: round 5s linear 0.1s infinite;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrap">
+        <span></span>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Keyframes介绍</title>
+    <style type="text/css">
+        @keyframes wobble{
+            from{
+                margin-left: 100px;
+                background: green;
+            }
+            25%{
+                margin-left: 150px;
+                background: orange;
+            }
+            50%{
+                margin-left: 175px;
+                background: blue;
+            }
+            to{
+                margin-left: 150px;
+                background: red;
+            }
+        }
+
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+            color: #fff;
+            border: 1px solid #c1c1c1;
+            line-height: 100px;
+            text-align: center;
+        }
+
+        div:hover{
+            animation: wobble 5s ease 0.1s;
+        }
+    </style>
+</head>
+<body>
+    <div>鼠标放在我身上</div>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>动画--过渡属性 transition-property</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <style type="text/css">
+        .halfdiv{
+            height: 150px;
+            width: 200px;
+            background-color: red;
+            margin: 10px auto;
+            -webkit-transition: width 0.5s ease 0.1s;
+            -moz-transition: width 0.5s ease 0.1s;
+            -ms-transition: width 0.5s ease 0.1s;
+            -o-transition: width 0.5s ease 0.1s;
+            transition: width 0.5s ease 0.1s;
+        }
+
+
+        ul{
+            list-style: none;
+            padding-left: 0px;
+        }
+
+        ul>li{
+            padding: 1rem;
+            border-bottom: 1px solid #c1c1c1;
+        }
+
+        .left{
+            position: fixed;
+            background: #ddd;
+            overflow: auto;
+            top: 0;
+            bottom: 0;
+            height: 100%;
+            width: 0%;
+            right: 0;
+            -webkit-transition: width 0.6s ease 0.2s;
+            -moz-transition: width 0.6s ease 0.2s;
+            -ms-transition: width 0.6s ease 0.2s;
+            -o-transition: width 0.6s ease 0.2s;
+            transition: width 0.6s ease 0.2s;
+            z-index: 100;
+        }
+
+        .left_show{
+            width: 88%;
+        }
+
+
+
+        /*div:hover{*/
+            /*width:400px;*/
+        /*}*/
+    </style>
+</head>
+<body>
+
+<div id="a">
+    <ul>
+        <li>动画--过渡属性</li>
+        <li>动画--过渡属性</li>
+        <li>动画--过渡属性</li>
+        <li>动画--过渡属性</li>
+        <li>动画--过渡属性</li>
+        <li>动画--过渡属性</li>
+        <li>动画--过渡属性</li>
+        <li>动画--过渡属性</li>
+        <li>动画--过渡属性</li>
+        <li>动画--过渡属性</li>
+        <li>动画--过渡属性</li>
+        <li>动画--过渡属性</li>
+        <li>动画--过渡属性</li>
+        <li>动画--过渡属性</li>
+        <li>动画--过渡属性</li>
+    </ul>
+</div>
+
+<div id="left" class="left">
+    <ul>
+        <li>动画--过渡属性</li>
+        <li>动画--过渡属性</li>
+        <li>动画--过渡属性</li>
+        <li>动画--过渡属性</li>
+        <li>动画--过渡属性</li>
+        <li>动画--过渡属性</li>
+        <li>动画--过渡属性</li>
+        <li>动画--过渡属性</li>
+        <li>动画--过渡属性</li>
+        <li>动画--过渡属性</li>
+        <li>动画--过渡属性</li>
+        <li>动画--过渡属性</li>
+        <li>动画--过渡属性</li>
+        <li>动画--过渡属性</li>
+        <li>动画--过渡属性</li>
+    </ul>
+</div>
+
+
+<script type="text/javascript" src="../../../js/jquery.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#a").on("click", function () {
+            $("#left").addClass("left_show");
+        });
+
+
+        $("#left").on("click","li", function () {
+            $("#left").removeClass("left_show");
+        })
+    })
+</script>
+</body>
+</html>

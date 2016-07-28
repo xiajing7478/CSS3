@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>变形原点transform-origin</title>
+    <style type="text/css">
+        .wrap{
+            width: 300px;
+            height: 300px;
+            float: left;
+            margin: 100px;
+            border: 2px dotted red;
+            line-height: 300px;
+            text-align: center;
+        }
+
+        .wrap div{
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+            background: orange;
+        }
+        
+        .transform-origin div{
+            -webkit-transform-origin: left center;
+            -moz-transform-origin: left center;
+            -ms-transform-origin: left center;
+            -o-transform-origin: left center;
+            transform-origin: left center;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div>原点在默认位置处</div>
+    </div>
+    <div class="wrap transform-origin">
+        <div>原点位置到左上角</div>
+    </div>
+</body>
+</html>

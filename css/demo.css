@@ -1,0 +1,444 @@
+.register-top{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3rem;
+    width: 100%;
+    background: #06a9ea;
+    color: white;
+    font-size:1.2rem;
+    text-align: center;
+    line-height: 3rem;
+}
+.m_banner{
+    background:#5a5a5a;
+    padding:0.35rem 0.4rem;
+}
+.m_banner .img_log{
+    background: url("../images/wulalogo.png") no-repeat center center;
+    height: 2.8rem;
+    background-size: 67%;
+}
+.m_banner .m_content{
+    color:#fff;
+    font-size: 1.1rem;
+}
+.m_banner .m_content .m_detail{
+    font-size: 0.9rem;
+    color:#bcbcbc;
+}
+.m_banner .onload-button{
+    height: 2.2rem;
+    background: #ff925d;
+    border-radius: 0.3rem;
+    line-height: 2.2rem;
+    text-align: center;
+    color: white;
+    margin-top: 0.28rem;
+}
+.register-identity-info{
+    color: #666666;
+    border-bottom: 1px solid #ddd;
+    padding: 0.5rem;
+    background: #f5f5f5;
+}
+#form_register  .imgCss{
+    height: 2rem;
+    width: 2rem;
+}
+#form_register .img_name{
+    background: url("../images/ptotoicon2x.png") no-repeat center;
+    background-size: 65%;
+}
+#form_register .img_phone{
+    background: url("../images/shouji2x.png") no-repeat center;
+    background-size: 65%;
+}
+
+#form_register .img_code{
+    background: url("../images/yanzheng2x.png") no-repeat center;
+    background-size: 65%;
+}
+
+#form_register .img_city{
+    background: url("../images/chengshi2x.png") no-repeat center;
+    background-size: 65%;
+}
+
+#form_register .img_square{
+    background: url("../images/anchang2x.png") no-repeat center;
+    background-size: 65%;
+}
+#form_register .img_area{
+    background: url("../images/quyu2x.png") no-repeat center;
+    background-size: 65%;
+}
+
+#form_register  .pure-g{
+    border-bottom: 1px solid #ccc;
+    padding: 0.35rem;
+}
+
+#form_register input[type="text"]{
+    border:none;
+    box-shadow: none;
+    padding: 0;
+    height: 2rem;
+    line-height: 2rem;
+    width:100%;
+    background: none;
+}
+
+#form_register #register-identifying-code{
+    background-color: #1fb8f4;
+    height: 2.2rem;
+    width: 90%;
+    border-radius: 0.3rem;
+    color: white;
+    font-weight: 500;
+    border: none;
+    line-height: 2.2rem;
+}
+
+#form_register .m_angle{
+    text-align: right;
+    font-size: 1.5rem;
+    color: #666;
+}
+
+#form_register .m_angle i{
+    padding-right:0.5rem;
+}
+
+#form_register .register-identity-img{
+    background: url("../images/rectangle-4.png") no-repeat center;
+    background-size: 32%;
+    background-color: white;
+    margin: 2rem 3rem;
+    height: 9rem;
+}
+
+#form_register .register-identity-img-box {
+    background: #f5f5f5;
+    border: none;
+}
+
+#form_register #preview{
+    display: block;
+    height: 9rem;
+    width: 100%;
+}
+
+#form_register .register-identity-img-detile{
+    color:#666666;
+}
+
+#form_register .register-identity-img-des{
+    padding-top:1.2rem;
+    color: #989898;
+}
+
+#form_register .register-supply{
+    padding-top:1.2rem;
+    text-align: center;
+}
+#form_register .register-supply a, .voiceCode a{
+    text-decoration: none;
+    color:#22aae8;
+}
+
+#form_register #check_agree{
+    margin:0.3rem 0.6rem 0rem 0rem;
+}
+
+#form_register .registerBtn{
+    border-radius: 0.3rem;
+    background: #1fa9e7;
+    color: white;
+    outline: none;
+    border: none;
+    width: 95%;
+    padding: 1rem;
+}
+
+#form_register .voiceCode{
+    padding:1.2rem;
+    color: #989898;
+}
+
+#footer .buildingExp{
+    background: url("../images/buildingExp.png") no-repeat center;
+    background-size: cover;
+    height: 11rem;
+    background-color: white;
+}
+
+#footer .tip {
+    display: none;
+    position: fixed;
+    top: 47%;
+    left: 20%;
+    width: 60%;
+    height: 2.5rem;
+    background: gray;
+    float: left;
+    line-height: 2.5rem;
+    text-align: center;
+    border-radius: 0.25rem;
+}
+
+
+/*html,
+body,
+header,
+form,
+div,
+input,
+label,
+p,
+a,
+img {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+html {
+  width: 100%;
+  height: 100%;
+  background: #f5f5f5;
+}
+header.register-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 0.8rem;
+  width: 100%;
+  background: #06a9ea;
+  color: white;
+  font-size: 0.36rem;
+  text-align: center;
+  line-height: 0.8rem;
+}
+#register-onload-link {
+  padding-top: 0.8rem;
+  display: flex;
+  justify-content: flex-start;
+  height: 1.2rem;
+  background: #5a5a5a;
+  width: 7.1rem;
+  padding-left: 0.4rem;
+}
+#register-onload-link .register-onload-img {
+  height: 100%;
+  width: 1.1rem;
+}
+#register-onload-link .register-onload-desc {
+  height: 100%;
+  width: 4.6rem;
+}
+#register-onload-link .register-onload-desc p:first-child {
+  height: 0.6rem;
+  color: white;
+  font-size: 0.3rem;
+  line-height: 0.7rem;
+}
+#register-onload-link .register-onload-desc p:last-child {
+  height: 0.6s rem;
+  color: #bcbcbc;
+  font-size: 0.28rem;
+  line-height: 0.6rem;
+}
+#register-onload-link .register-onload-button {
+  font-size: 0.3rem;
+}
+#register-onload-link .register-onload-button .onload-button {
+  width: 1rem;
+  height: 0.65rem;
+  background: #ff925d;
+  border-radius: 0.05rem;
+  line-height: 0.65rem;
+  text-align: center;
+  color: white;
+  margin-top: 0.28rem;
+  margin-left: 0.2rem;
+}
+.register-identity {
+  height: 0.6rem;
+  width: 100%;
+  border-bottom: 0.02rem #ddd solid;
+}
+.register-identity .register-identity-detile {
+  line-height: 0.6rem;
+  margin-left: 0.4rem;
+  width: 7.1rem;
+  height: 0.6rem;
+  font-size: 0.28rem;
+  text-align: left;
+  color: #666;
+}
+form {
+  width: 100%;
+  height: 100%;
+  font-size: 0.28rem;
+}
+form .register-personal-info {
+  width: 100%;
+  height: 100%;
+  background: white;
+}
+form .register-personal-info .register-personal-info-detile {
+  height: 0.6rem;
+  width: 100%;
+  border-bottom: 0.02rem #ddd solid;
+  padding: 0.15rem 0;
+}
+form .register-personal-info .register-personal-info-detile input {
+  font-size: 0.28rem;
+  height: 0.6rem;
+  border: none;
+  outline: none;
+  margin-left: 0.4rem;
+  color: #8c8c8c;
+  text-indent: 0.7rem;
+  background-size: 8%;
+}
+form .register-personal-info .register-personal-info-detile .item1 {
+  background: url(../images/ptotoicon2x.png) no-repeat left center;
+}
+form .register-personal-info .register-personal-info-detile .item2 {
+  background: url(../images/shouji2x.png) no-repeat left center;
+}
+form .register-personal-info .register-personal-info-detile .item3 {
+  background: url(../images/yanzheng2x.png) no-repeat left center;
+}
+form .register-personal-info .register-personal-info-detile .item4 {
+  background: url(../images/chengshi2x.png) no-repeat left center;
+}
+form .register-personal-info .register-personal-info-detile .item5 {
+  background: url(../images/anchang2x.png) no-repeat left center;
+}
+form .register-personal-info .register-personal-info-detile .item6 {
+  background: url(../images/quyu2x.png) no-repeat left center;
+}
+form .register-personal-info .choose-list {
+  display: flex;
+  justify-content: space-between;
+}
+form .register-personal-info .choose-list .chooseArrow {
+  background: url(../images/rightArrow.jpg) no-repeat center;
+  width: 1rem;
+}
+form #register-identifying-code {
+  background: none;
+  background-color: #1fb8f4;
+  height: 0.6rem;
+  width: 2rem;
+  border-radius: 0.1rem;
+  text-align: center;
+  color: white;
+  text-indent: 0;
+  font-weight: 500;
+  margin-left: 1.3rem;
+}
+form input::-webkit-input-placeholder {
+  color: #666;
+  font-size: 0.28rem;
+}
+form input::-moz-placeholder {
+  color: #666;
+  font-size: 0.28rem;
+}
+form input::-ms-input-placeholder {
+  color: #666;
+  font-size: 0.28rem;
+}
+form .register-identity-img-box {
+  margin-top: 0.5rem;
+  width: 100%;
+  height: 100%;
+}
+form .register-identity-img-box .register-identity-img {
+  margin: 0 1.75rem;
+  width: 3.96rem;
+  height: 2.62rem;
+  border: 0.02rem #ddd solid;
+  border-radius: 0.1rem;
+  background: url(../images/rectangle-4.png) no-repeat center;
+  background-size: 30%;
+  background-color: white;
+}
+form .register-identity-img-box .register-identity-img img {
+  width: 100%;
+  height: 100%;
+}
+form .register-identity-img-box .register-identity-img input {
+  height: 2.62rem;
+  width: 3.96rem;
+  outline: none;
+  border: none;
+}
+form .register-identity-img-box p {
+  text-align: center;
+  display: block;
+  width: 100%;
+  height: 0.8rem;
+  line-height: 0.8rem;
+}
+form .register-identity-img-box .register-identity-img-detile {
+  margin-top: 0.26rem;
+  color: #666;
+}
+form .register-identity-img-box .register-identity-img-des {
+  color: #999;
+}
+form .register-supply {
+  text-align: center;
+  height: 0.28rem;
+  padding: 0.1rem 0;
+}
+form .register-supply input {
+  height: 0.28rem;
+  width: 0.28rem;
+}
+form .registerBtn {
+  width: 7.1rem;
+  height: 0.9rem;
+  margin: 0 0.2rem;
+  border-radius: 0.1rem;
+  background: #1fa9e7;
+  font-size: 0.36rem;
+  color: white;
+  outline: none;
+  border: none;
+}
+form .voiceCode {
+  text-align: center;
+  height: 0.8rem;
+  line-height: 0.8rem;
+}
+.tip {
+  display: none;
+  position: fixed;
+  top: 4rem;
+  left: 20%;
+  width: 60%;
+  height: 0.6rem;
+  background: gray;
+  float: left;
+  line-height: 0.6rem;
+  text-align: center;
+  font-size: 0.24rem;
+  border-radius: 0.1rem;
+}
+#footer {
+  margin-top: 0.3rem;
+  height: 4rem;
+  width: 7.5rem;
+}
+#footer img {
+  height: 100%;
+  width: 100%;
+}*/
+/*# sourceMappingURL=registerGuide.css.map */

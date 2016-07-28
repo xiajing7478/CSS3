@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>注册屋拉经纪人</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <script type="text/javascript" src="js/lib/jquery.js" ></script>
+    <!-- 		<script type="text/javascript" src="js/the_tool_for_phone.js" ></script> -->
+    <script type="text/javascript" src="js/registerGuide.js" ></script>
+    <link rel="stylesheet" type="text/css" href="css/registerGuide.css"/>
+    <link rel="stylesheet" href="css/purecss/build/pure-min.css">
+    <link rel="stylesheet" href="css/Font-Awesome-4.6.3/css/font-awesome.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/index2.css">
+    <style type="text/css">
+
+    </style>
+</head>
+<body>
+<div class="pure-g" style="margin-bottom:3rem;">
+    <div class="pure-u-1 register-top">注册屋拉经纪人</div>
+</div>
+<div class="pure-g m_banner">
+    <div class="pure-u-1-6 img_log"></div>
+    <div class="pure-u-2-3 m_content">
+        <p>屋拉经纪人</p>
+        <p class="m_detail">卖房神器，专为独立经纪人而生!</p>
+    </div>
+    <div class="pure-u-1-6">
+        <div class="onload-button">
+            下载
+        </div>
+    </div>
+</div>
+
+<div class="pure-g">
+    <label class="pure-u-1 register-identity-info">案场经纪人</label>
+</div>
+
+<div class="pure-g">
+    <form id="form_register" class="pure-form" action="" method="" enctype="multipart/form-data">
+        <div class="pure-g">
+            <div class="pure-u-1-6"><div class="imgCss img_name"></div></div>
+            <div class="pure-u-5-6">
+                <input class="item1" type="text" placeholder="输入姓名" />
+            </div>
+        </div>
+        <div class="pure-g">
+            <div class="pure-u-1-6"><div class="imgCss img_phone"></div></div>
+            <div class="pure-u-1-2">
+                <input class="item2" type="text" placeholder="请输入手机号码">
+            </div>
+            <div class="pure-u-1-3 m_center">
+                <input id="register-identifying-code" type="button" value="获取验证码" />
+            </div>
+        </div>
+        <div class="pure-g">
+            <div class="pure-u-1-6"><div class="imgCss img_code"></div></div>
+            <div class="pure-u-5-6">
+                <input class="item3" type="text" placeholder="请输入短信验证码" />
+            </div>
+        </div>
+        <div class="pure-g">
+            <div class="pure-u-1-6"><div class="imgCss img_city"></div></div>
+            <div class="pure-u-2-3">
+                <input class="item4" type="text" placeholder="您所在的城市">
+            </div>
+            <div class="pure-u-1-6 m_angle">
+                <i id="sel_City" class="fa fa-angle-right" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="pure-g">
+            <div class="pure-u-1-6"><div class="imgCss img_square"></div></div>
+            <div class="pure-u-2-3">
+                <input class="item5" type="text" placeholder="您所在的案场或机构">
+            </div>
+            <div class="pure-u-1-6 m_angle">
+                <i id="sel_Square" class="fa fa-angle-right" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="pure-g">
+            <div class="pure-u-1-6"><div class="imgCss img_area"></div></div>
+            <div class="pure-u-2-3">
+                <input class="item6" type="text" placeholder="您所在的区域">
+            </div>
+            <div class="pure-u-1-6 m_angle">
+                <i id="sel_District" class="fa fa-angle-right" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="pure-g register-identity-img-box">
+            <div class="register-identity-img pure-u-1" id="localImag">
+                <img id="preview" src="" >
+                <input class="m_hide" type="file" name="" id="doc" value="上传图片" accept="image/*" "="">
+            </div>
+            <div class="pure-u-1 register-identity-img-detile m_center">
+                <p class="register-identity-img-detile">上传名片照片</p>
+                <p class="register-identity-img-des"><span></span>名片中的案场或机构需与填写的内容一致</p>
+            </div>
+            <div class="pure-u-1 register-supply">
+                <div class="pure-controls">
+                    <label for="check_agree" class="pure-checkbox">
+                        <input id="check_agree" type="checkbox" checked>已阅读并同意<a href="javascript:;">《经纪人用户协议》</a>
+                    </label>
+                </div>
+            </div>
+            <div class="pure-u-1 m_center">
+                <input class="registerBtn" type="submit" value="立即提交">
+            </div>
+            <div class="pure-u-1 m_center">
+                <div class="voiceCode">收不到短信？使用<a href="javaScript:;">语音验证码</a></div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<!--一个脱离文本流的空间，用来存放提示信息-->
+<div class="pure-g" id="footer">
+    <div class="pure-u-1 tip"></div>
+    <div class="pure-u-1 buildingExp"></div>
+</div>
+
+<!-- orgin code begin-->
+<!-- 		<div id="register-onload-link"> -->
+<!-- 			<div class="register-onload-img"> -->
+<!-- 				<img src="images/wulalogo.png"/> -->
+<!-- 			</div> -->
+<!-- 			<div class="register-onload-desc"> -->
+<!-- 				<p>屋拉经纪人</p> -->
+<!-- 				<p>卖房神器，专为独立经纪人而生</p> -->
+<!-- 			</div> -->
+<!-- 			<div class="register-onload-button"> -->
+<!-- 				<div class="onload-button"> -->
+<!-- 					下载 -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+
+<!-- 		<div class="register-identity"> -->
+<!-- 			<div class="register-identity-detile">					 -->
+<!-- 				<label class="register-identity-info">案场经纪人</label> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+<!-- 		<form action="" method="" enctype="multipart/form-data">	 -->
+<!-- 			<div class="register-personal-info"> -->
+<!-- 				<div class="register-personal-info-detile"><input class="item1" type="text" placeholder="输入姓名" /></div> -->
+<!-- 				<div class="register-personal-info-detile"><input class="item2" type="text" placeholder="请输入手机号码" /><input id="register-identifying-code" type="button" value="获取验证码" /></div> -->
+<!-- 				<div class="register-personal-info-detile"><input class="item3" type="text" placeholder="请输入短信验证码" /></div> -->
+<!-- 				<div class="register-personal-info-detile choose-list"><input class="item4" type="text" placeholder="您所在的城市" /><div id="sel_City"  class="chooseArrow"></div></div> -->
+<!-- 				<div class="register-personal-info-detile choose-list"><input class="item5" type="text" placeholder="您所在的案场或机构"  /><div id="sel_Square" class="chooseArrow"></div></div> -->
+<!-- 				<div class="register-personal-info-detile choose-list"><input class="item6" type="text" placeholder="您所在的区域"  /><div id="sel_District" class="chooseArrow"></div></div>				 -->
+
+<!-- 			</div> -->
+<!-- 			<div class="register-identity-img-box"> -->
+<!-- 				<div class="register-identity-img" id="localImag"> -->
+<!-- 					<img id="preview" src="" width="100%" height="260" style="display: block">-->
+<!-- 					<input class="m_hide" type="file" name="" id="doc" value="上传图片"  accept="image/*" " /> -->
+
+<!-- 				</div> -->
+<!-- 				<p class="register-identity-img-detile">上传名片照片</p> -->
+<!-- 				<p class="register-identity-img-des">名片中的案场或机构需与填写的内容一致</p> -->
+<!-- 			</div> -->
+<!-- 			<div class="register-supply"> -->
+<!-- 				<input type="checkbox" name="" id="" value="" checked="checked"/> -->
+<!-- 				<label class="register-agreement">已阅读并同意<a href="javascript:;">《经纪人用户协议》</a></label> -->
+<!-- 			</div> -->
+<!-- 			<input class="registerBtn" type="submit" value="立即提交"/> -->
+<!-- 			<div class="voiceCode"> -->
+<!-- 				收不到短信？使用<a href="javaScript:;">语音验证码</a> -->
+<!-- 			</div> -->
+<!-- 		</form> -->
+
+<!--一个脱离文本流的空间，用来存放提示信息-->
+<!-- 		<div class="tip"></div> -->
+<!-- 		<div id="footer"> -->
+<!-- 			<img src="images/buildingExp.png"/> -->
+<!-- 		</div> -->
+<!-- orgin code end-->
+
+<!-- 城市  begin-->
+        <textarea id="city_List" class="m_hide">
+            {#foreach $T as record}
+                <div data-id="{$T.record.arId}" class="pure-u-1">{$T.record.arName}</div>
+            {#/for}
+        </textarea>
+<div id="getCity" class="pure-g isShow m_posLocation isShowNodelay">
+    <div class="pure-u-1-1 header">
+        <div class="pure-g">
+            <div class="pure-u-1-6 back"><i class="fa fa-2x fa-angle-left" aria-hidden="true"></i></div>
+            <div class="pure-u-2-3 m_font">选择城市</div>
+            <div class="pure-u-1-6"></div>
+        </div>
+    </div>
+    <div class="pure-g" style="width:100%;">
+        <div class="pure-u-2-3">
+            <div id="city" class="city"></div>
+
+        </div>
+        <div class="pure-u-1-3">
+            <div class="m_pad">点击进入<i class="fa fa-angle-right m_icon"  aria-hidden="true"></i></div>
+        </div>
+    </div>
+
+    <div class="pure-g" style="width:100%;">
+        <div class="pure-u-1">
+            <p class="m_title">城市</p>
+        </div>
+        <div class="pure-u-1-1">
+            <div class="pure-g" id="city_record"></div>
+        </div>
+    </div>
+</div>
+<!-- 城市  end-->
+
+<!-- 案场  begin-->
+<div id="getSquare" class="pure-g isShow m_posLocation isShowNodelay">
+    <div class="pure-u-1-1 header">
+        <div class="pure-g">
+            <div id="goBack" class="pure-u-1-6"><i class="fa fa-2x fa-angle-left" aria-hidden="true"></i></div>
+            <div id="pos_title" class="pure-u-2-3 m_font">案场搜索</div>
+            <div class="pure-u-1-6"></div>
+        </div>
+    </div>
+
+    <div class="pure-u-1-1 content">
+        <div id="m_search" class="pure-g m_search">
+            <div class="pure-u-3-4 m_bgWhite">
+                <i class="fa fa-search" style="color:#ddd;"  aria-hidden="true"></i>
+                <input type="text" id="search_text" placeholder="请输入您所在的案场名称">
+            </div>
+            <div class="pure-u-1-4">
+                <input type="button" id="btn_search" value="确认" >
+            </div>
+        </div>
+        <div class="pure-g m_hide" id="search_anonymous">
+            <div class="pure-u-1-1">
+                搜索无结果,提交自己的案场吧!<p id="m_anoyCol" class="m_anoyCol">点击提交</p>
+            </div>
+            <div id="form_square" class="pure-u-1-1 m_hide" >
+                <div class="pure-g m_formCss">
+                    <div class="pure-u-1 ">
+                        <input type="text" id="m_inputSquare" placeholder="请输入案场名称">
+                    </div>
+                    <div class="pure-u-1">
+                        <input type="button" id="m_btnSquare" value="立即提交">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pure-g m_hide" id="list">
+            <ul class="pure-u-1-1">
+                <li>
+                    <div class="pure-u-1-1">
+                        <div class="pure-g">
+                            <div class="pure-u-1-2 ">
+                                <span class="m_color_65">朗诗未来街区</span>
+                            </div>
+                            <div class="pure-u-1-3 m_fontCss">
+                                奉贤-金汇
+                            </div>
+                            <div class="pure-u-1-6 m_center">
+                                <i class="icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="pure-u-1-1">
+                        <div class="pure-g">
+                            <div class="pure-u-1-2 ">
+                                <span class="m_color_65">安亭瑞士华庭</span>
+                            </div>
+                            <div class="pure-u-1-3 m_fontCss">
+                                松江-金汇
+                            </div>
+                            <div class="pure-u-1-6 m_center">
+                                <i class="icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="pure-u-1-1">
+                        <div class="pure-g">
+                            <div class="pure-u-1-2 ">
+                                <span class="m_color_65">象屿上海年华</span>
+                            </div>
+                            <div class="pure-u-1-3 m_fontCss">
+                                嘉定-南翔
+                            </div>
+                            <div class="pure-u-1-6 m_center">
+                                <i class="icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="pure-u-1-1">
+                        <div class="pure-g">
+                            <div class="pure-u-1-2 ">
+                                <span class="m_color_65">金融街静安中心</span>
+                            </div>
+                            <div class="pure-u-1-3 m_fontCss">
+                                静安-虹桥
+                            </div>
+                            <div class="pure-u-1-6 m_center">
+                                <i class="icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="pure-u-1-1">
+                        <div class="pure-g">
+                            <div class="pure-u-1-2 ">
+                                <span class="m_color_65">瑞虹新城悦庭</span>
+                            </div>
+                            <div class="pure-u-1-3 m_fontCss">
+                                虹口-座球场
+                            </div>
+                            <div class="pure-u-1-6 m_center">
+                                <i class="icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="pure-u-1-1">
+                        <div class="pure-g">
+                            <div class="pure-u-1-2 ">
+                                <span class="m_color_65">翡丽甲第</span>
+                            </div>
+                            <div class="pure-u-1-3 m_fontCss">
+                                杨浦-五角场
+                            </div>
+                            <div class="pure-u-1-6 m_center">
+                                <i class="icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div id="m_btn" class="pure-u-1-1 m_btn">
+                <input id="btn_ok" disabled type="button" class="btn-primary btn_disabled" value="确&nbsp;认">
+            </div>
+        </div>
+        <div id="error_msg" class="pure-g m_hide">
+            <div class="pure-u-1 m_input_error">
+                <p>请先输入您所在的案场</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 案场  end-->
+
+<!-- 区域  begin-->
+<div id="getDistrict" class="pure-g isShow m_posLocation isShowNodelay">
+    <div class="pure-u-1-1 header">
+        <div class="pure-g">
+            <div id="district_back" class="pure-u-1-6"><i class="fa fa-2x fa-angle-left" aria-hidden="true"></i></div>
+            <div class="pure-u-2-3 m_font">选择区域</div>
+            <div class="pure-u-1-6"></div>
+        </div>
+    </div>
+    <div class="pure-u-1-1 content">
+        <div class="pure-g" id="m_content">
+            <div class="pure-u-1-4">
+                <div class="pure-g ">
+                    <div class="pure-u-1 m_border">北京2</div>
+                </div>
+            </div>
+            <div class="pure-u-1-4">
+                <div class="pure-g ">
+                    <div class="pure-u-1 m_border">安徽2</div>
+                </div>
+            </div>
+            <div class="pure-u-1-4">
+                <div class="pure-g ">
+                    <div class="pure-u-1 m_border">成都</div>
+                </div>
+            </div>
+            <div class="pure-u-1-4">
+                <div class="pure-g ">
+                    <div class="pure-u-1 m_border">上海1</div>
+                </div>
+            </div>
+            <div class="pure-u-1-4">
+                <div class="pure-g ">
+                    <div class="pure-u-1 m_border">白山</div>
+                </div>
+            </div>
+            <div class="pure-u-1-4">
+                <div class="pure-g ">
+                    <div class="pure-u-1 m_border">大连</div>
+                </div>
+            </div>
+            <div class="pure-u-1-4">
+                <div class="pure-g ">
+                    <div class="pure-u-1 m_border">合肥</div>
+                </div>
+            </div>
+            <div class="pure-u-1-4">
+                <div class="pure-g ">
+                    <div class="pure-u-1 m_border">南京</div>
+                </div>
+            </div>
+            <div class="pure-u-1-4">
+                <div class="pure-g ">
+                    <div class="pure-u-1 m_border">黄山</div>
+                </div>
+            </div>
+            <div class="pure-u-1-4">
+                <div class="pure-g ">
+                    <div class="pure-u-1 m_border">九华山</div>
+                </div>
+            </div>
+        </div>
+        <div class="pure-g">
+            <div class="pure-u-1 m_disPad">
+                <input type="button" id="btn_district" value="确&nbsp;认">
+            </div>
+        </div>
+        <div id="district_errorMsg" class="pure-g m_hide">
+            <div class="pure-u-1 m_input_error">
+                <p>请选择区域</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 区域  end-->
+<div class="pure-g filterMask"></div>
+
+<script  type="text/javascript"  src="js/lib/requirejs/require.js"></script>
+<script  type="text/javascript"  src="js/main.js"></script>
+<script src="http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js"></script>
+<script type="text/javascript"  src="js/index2.js"></script>
+</body>
+</html>
